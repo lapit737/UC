@@ -1,0 +1,181 @@
+<!doctype html>
+<html>
+<head>
+<title>New School Map</title>
+<link rel="stylesheet" type="text/css" href="css/jquery.qtip.min.css"></link>
+<style type="text/css">
+body {
+  width: 100%;
+  height: 100%;
+
+}
+#imageWrapper {
+  position: absolute;
+  left: 340px;
+  top: 0;
+  width: 600px;
+  height: 580px;
+  background-image: url("img/frontuni.png"); 
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+#imageWrapper:hover {
+ background-image: url("img/uni.png");
+
+}
+#imageWrapper:hover .emoji {
+	display: block;
+}
+#14thstreet {
+position:absolute;
+left: -283px;
+top:0;
+width: 600px;
+height: 400;
+z-index: 100;
+}
+
+#13thstreet {
+position: absolute; 
+left: 800px;
+top: 0;
+width: 600px;
+height; 400px;
+z-index: 100;
+}
+
+#bgimage {
+  z-index: 1;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.emoji {
+  display: none;
+  z-index: 2;
+  position: absolute;
+  opacity: 0.9;
+}
+.emoji:hover {
+  opacity: 1;
+
+}
+#nametune {
+  top: 331px;
+  left: 475px;
+
+}
+#sports {
+  top: 453px;
+  left: 176px;
+
+}
+#sushi {
+	top:335px;
+	left:200px;
+}
+#laundry {
+	top:148px;
+	left:338px;
+}
+#dormlife {
+	top:43px;
+	left:223px;
+}
+#stairs {
+	top:430px;
+	left:545px;
+}
+#money {
+	top:335px;
+	left:120px;
+}
+#gavel {
+	top:361px;
+	left:558px;
+}
+#narwhal {
+	top:477px;
+	left:366px;
+}
+#simoncollins {
+	top:450px;
+	left:172px;
+}
+#classdistribution {
+	top:347px;
+	left:327px;
+}
+
+#cursorPosition {
+  top: 0;
+  right: 0;
+  width: 100px;
+  height: 24px;
+  font-family: Helvetica, Arial,sans-serif;
+  font-weight: bold;
+  position: absolute;
+
+}
+
+</style>
+<script src="js/jquery-1.11.1.min.js"></script>
+<script src="js/jquery.qtip.min.js"></script>
+</head>
+<body>
+<img id="14thstreet" src="img/14thst.png" height: width= "400" height= "600" align= "left"/>
+<img id="13thstreet" src="img/13thst.png" height: width= "400" height= "600" align= "right"/>
+  <div id="imageWrapper">
+   <!-- <img id="bgimage" src="img/uni.png" width="600" height="400" align= "middle"></img>-->
+    <a class="emoji" href="http://narwhalnation.com/athletics/soccer/" target="_blank" id="sports" title="New School Sports">
+      <img src="img/sports.jpg" width=90 height=90 />
+    </a>
+    <a class="emoji" href="http://en.wikipedia.org/wiki/Name_That_Tune" target="_blank" id="nametune" title="Name That Tune!">
+      <img src="img/nametune.jpg" width=90 height=90 />
+    </a>
+      <a class="emoji" href="http://en.wikipedia.org/wiki/Sushi_Pack" target="_blank" id="sushi" title="Sushi">
+      <img src="img/sushireal.png" width=90 height=90 />
+    </a>
+    <a class="emoji" href="http://www.yelp.com/c/nyc/drycleaninglaundry" target="_blank" id="laundry" title="Laundry">
+      <img src="img/laundry.png" width=90 height=90 />
+      </a>
+          <a class="emoji" href="http://www.newschool.edu/" target="_blank" id="dormlife" title="Dorm Life">
+      <img src="img/dormlife.png" width=90 height=90 />
+      </a>
+         <a class="emoji" href="http://archpaper.com/news/articles.asp?id=6246#.VGo5D1fF8Vk" target="_blank" id="stairs" title="Stairs">
+      <img src="img/stairs.png" width=90 height=90 />
+      </a>
+          <a class="emoji" href="http://www.dineoncampus.com/newschooldining/idx.cfm?" target="_blank" id="money" title="Cost">
+      <img src="img/money.png" width=90 height=90 />
+      </a>
+       <a class="emoji" href="http://www.newschool.edu/" target="_blank" id="gavel" title="Gavel">
+      <img src="img/gavel.png" width=90 height=90 />
+      </a>
+       <a class="emoji" href="http://www.newschool.edu/" target="_blank" id="narwhal" title="Narwhal">
+      <img src="img/narwhal.png" width=90 height=90 />
+      </a>
+        <a class="emoji" href="http://www.newschool.edu/" target="_blank" id="simoncollins" title="Simon Collins">
+      <img src="img/simon.png" width=80 height=80 />
+      </a>
+        <a class="emoji" href="http://www.newschool.edu/" target="_blank" id="classdistribution" title="Classroom Distribution">
+      <img src="img/classdistribution.png" width=80 height=80 />
+      </a>
+  </div>
+  <div id="cursorPosition"> 
+  </div>
+
+<script>
+  $(document).ready(function(){
+    $('body').on('mousemove', function(e){
+      $('#cursorPosition').text(e.pageX -340 + ', ' + e.pageY);
+
+    });
+
+    $('.emoji').qtip(); // Tooltips -- see http://qtip2.com/guides
+
+  });
+</script>
+</body>
+
+</html>
+
